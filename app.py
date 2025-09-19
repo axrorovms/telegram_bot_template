@@ -12,14 +12,6 @@ async def main():
     
     await set_default_commands(bot)
     await on_startup_notify(bot)
-
-    try:
-        db.create_volunteers_table()
-        db.create_pdf_table()
-        
-    except Exception as e:
-        print("Error:", e)
-
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
